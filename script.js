@@ -19,7 +19,7 @@ let image = [
 ];
 
 function render() {
-    let templateimg = document.getElementById(`template_img`);
+    let templateimg = document.getElementById(`template_container`);
 
     for (let i = 0; i < image.length; i++) {
         templateimg.innerHTML += getnotesHTML(i);
@@ -28,6 +28,6 @@ function render() {
 
 function getnotesHTML(index) {
     return `<div class="single_element">
-                <img src=${image[index]}
+                <a href="#"><img src=${image[index]}></a>
             </div>`;
 }
