@@ -5,10 +5,25 @@
     position: relative;
     box-sizing: border-box;
 }
+::-webkit-scrollbar {
+    display: none;
+}
+/* ::-webkit-scrollbar {
+    display: none;
+}  
+    sorgt dafuer das man die scrollbar an der rechten Seite nicht sehen kann
+    wobei das nur bei Chrome Edge und Safari
+    
+html {
+    scrollbar-width: none;
+}    
+    das bei Firefox
+*/
 @font-face {
     font-family: "raleway";
     src: url(./Raleway-VariableFont_wght.ttf);
 }
+
 html,
 body {
     height: 100%;
@@ -20,153 +35,204 @@ html {
 body {
     display: flex;
     flex-direction: column;
+}
+.d_none {
+    display: none !important;
+}
+header {
+    display: flex;
+    align-items: center;
+    padding: 0rem 6rem;
+    background-color: #082029;
+    min-height: 12rem;
+    img {
+        height: 6rem;
+        width: auto;
+    }
+}
+#main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem 12rem;
+    background-color: #05171e;
+    color: white;
 
-    header {
+    h1 {
+        font-family: raleway;
+        font-size: 5.4rem;
+        margin-bottom: 4rem;
+    }
+    #template_container {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        img {
+            width: 20rem;
+            height: 20rem;
+            border-radius: 1.5rem;
+            object-fit: cover;
+        }
+        a {
+            display: flex;
+            width: 20rem;
+            height: 20rem;
+            border-radius: 1.5rem;
+        }
+        img:hover {
+            filter: drop-shadow(0rem 0rem 0.8rem #29718d);
+        }
+    }
+}
+
+#main_pop_up {
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 255, 0.586);
+    width: 400px;
+    height: 550px;
+    padding: 30px 30px;
+    border-radius: 20px;
+    border: solid 6px rgb(64, 0, 255);
+    .child1 {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+    }
+    .child2 {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 350px;
+            height: 350px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+    }
+    .child3 {
         display: flex;
         align-items: center;
-        padding: 0rem 6rem;
-        background-color: #082029;
-        min-height: 12rem;
+        justify-content: space-around;
+        padding-bottom: 20px;
+        span {
+            text-align: center;
+        }
         img {
-            height: 6rem;
-            width: auto;
+            width: 40px;
+            height: 40px;
+        }
+        img:hover {
+            filter: drop-shadow(0rem 0rem 0.8rem #000000);
+        }
+        span {
+            font-size: 24px;
+        }
+    }
+}
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 6rem;
+    background-color: #082029;
+    min-height: 16rem;
+    img {
+        height: 4rem;
+        width: auto;
+        border-radius: 50px;
+    }
+
+    .icons {
+        display: flex;
+        gap: 1.6rem;
+        a {
+            display: flex;
+            border-radius: 50px;
+            height: 4rem;
+            width: 4rem;
+        }
+    }
+}
+@media (max-width: 915px) {
+    #main {
+        padding: 3rem 6rem;
+        h1 {
+            font-size: 4.6rem;
+        }
+    }
+}
+@media (max-width: 696px) {
+    header {
+        min-height: 8rem;
+        img {
+            height: 4rem;
         }
     }
     #main {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        align-items: center;
-        padding: 6rem 12rem;
-        background-color: #05171e;
-        color: white;
-
         h1 {
-            font-family: raleway;
-            font-size: 5.4rem;
-            margin-bottom: 4rem;
+            font-size: 3.6rem;
         }
+    }
+    footer {
+        min-height: 12rem;
+        img {
+            height: 4rem;
+        }
+    }
+}
+@media (max-width: 585px) {
+    #main {
+        padding: 3rem;
+        h1 {
+            font-size: 2.6rem;
+        }
+    }
+}
+@media (max-width: 492px) {
+    #main {
+        padding: 3rem 1.6rem;
         #template_container {
-            display: flex;
-            justify-content: center;
             gap: 2rem;
-            flex-wrap: wrap;
-
             img {
-                width: 20rem;
-                height: 20rem;
-                border-radius: 1.5rem;
-                object-fit: cover;
+                width: 25rem;
+                height: 25rem;
             }
             a {
-                display: flex;
-                width: 20rem;
-                height: 20rem;
-                border-radius: 1.5rem;
-            }
-            img:hover {
-                filter: drop-shadow(0rem 0rem 0.8rem #29718d);
+                width: 25rem;
+                height: 25rem;
             }
         }
     }
     footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0rem 6rem;
-        background-color: #082029;
-        min-height: 16rem;
-        img {
-            height: 4rem;
-            width: auto;
-            border-radius: 50px;
+        padding: 1.6rem;
+    }
+}
+@media (max-width: 400px) {
+    #main {
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
         }
-
-        .icons {
-            display: flex;
-            gap: 1.6rem;
+    }
+}
+@media (max-width: 370px) {
+    #main {
+        #template_container {
+            gap: 2rem;
+            img {
+                width: 20rem;
+                height: 20rem;
+            }
             a {
-                display: flex;
-                border-radius: 50px;
-                height: 4rem;
-                width: 4rem;
-            }
-        }
-    }
-    @media (max-width: 915px) {
-        #main {
-            padding: 3rem 6rem;
-            h1 {
-                font-size: 4.6rem;
-            }
-        }
-    }
-    @media (max-width: 696px) {
-        header {
-            min-height: 8rem;
-            img {
-                height: 4rem;
-            }
-        }
-        #main {
-            h1 {
-                font-size: 3.6rem;
-            }
-        }
-        footer {
-            min-height: 12rem;
-            img {
-                height: 4rem;
-            }
-        }
-    }
-    @media (max-width: 585px) {
-        #main {
-            padding: 3rem;
-            h1 {
-                font-size: 2.6rem;
-            }
-        }
-    }
-    @media (max-width: 492px) {
-        #main {
-            padding: 3rem 1.6rem;
-            #template_container {
-                gap: 2rem;
-                img {
-                    width: 25rem;
-                    height: 25rem;
-                }
-                a {
-                    width: 25rem;
-                    height: 25rem;
-                }
-            }
-        }
-        footer {
-            padding: 1.6rem;
-        }
-    }
-    @media (max-width: 400px) {
-        #main {
-            h1 {
-                font-size: 2.2rem;
-                margin-bottom: 3rem;
-            }
-        }
-    }
-    @media (max-width: 370px) {
-        #main {
-            #template_container {
-                gap: 2rem;
-                img {
-                    width: 20rem;
-                    height: 20rem;
-                }
-                a {
-                    width: 20rem;
-                    height: 20rem;
-                }
+                width: 20rem;
+                height: 20rem;
             }
         }
     }
