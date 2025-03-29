@@ -45,11 +45,13 @@ header {
     padding: 0rem 6rem;
     background-color: #082029;
     min-height: 12rem;
-    img {
+
+    .headerimage {
         height: 6rem;
         width: auto;
     }
 }
+
 #main {
     display: flex;
     flex: 1;
@@ -69,37 +71,36 @@ header {
         justify-content: center;
         gap: 2rem;
         flex-wrap: wrap;
-
-        img {
-            width: 20rem;
-            height: 20rem;
-            border-radius: 1.5rem;
-            object-fit: cover;
-        }
-        a {
-            display: flex;
-            width: 20rem;
-            height: 20rem;
-            border-radius: 1.5rem;
-        }
-        img:hover {
-            filter: drop-shadow(0rem 0rem 0.8rem #29718d);
-        }
     }
-}
+    .images {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 1.5rem;
+        object-fit: cover;
+    }
+    .images:hover {
+        filter: drop-shadow(0rem 0rem 0.8rem #29718d);
+    }
+    a {
+        display: flex;
+        width: 20rem;
+        height: 20rem;
+        border-radius: 1.5rem;
+    }
 
-#main_pop_up {
-    z-index: 1;
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: rgba(0, 0, 255, 0.586);
-    width: 400px;
-    height: 550px;
-    padding: 30px 30px;
-    border-radius: 20px;
-    border: solid 6px rgb(64, 0, 255);
+    #main {
+        z-index: 1;
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 255, 0.586);
+        width: 400px;
+        height: 550px;
+        padding: 30px 30px;
+        border-radius: 20px;
+        border: solid 6px rgb(64, 0, 255);
+    }
     .child1 {
         display: flex;
         justify-content: center;
@@ -108,27 +109,27 @@ header {
     .child2 {
         display: flex;
         justify-content: center;
-
-        img {
-            width: 350px;
-            height: 350px;
-            border-radius: 15px;
-            object-fit: cover;
-        }
     }
+    .popupimage {
+        width: 35rem;
+        height: 35rem;
+        border-radius: 1.5rem;
+        object-fit: cover;
+    }
+
     .child3 {
         display: flex;
         align-items: center;
         justify-content: space-around;
-        padding-bottom: 20px;
+        padding-bottom: 2rem;
         span {
             text-align: center;
         }
-        img {
-            width: 40px;
-            height: 40px;
+        .leftrightimage {
+            width: 4rem;
+            height: 4rem;
         }
-        img:hover {
+        .leftrightimage:hover {
             filter: drop-shadow(0rem 0rem 0.8rem #000000);
         }
         span {
@@ -143,6 +144,7 @@ footer {
     padding: 0rem 6rem;
     background-color: #082029;
     min-height: 16rem;
+
     img {
         height: 4rem;
         width: auto;
@@ -152,12 +154,12 @@ footer {
     .icons {
         display: flex;
         gap: 1.6rem;
-        a {
-            display: flex;
-            border-radius: 50px;
-            height: 4rem;
-            width: 4rem;
-        }
+    }
+    .icons a {
+        display: flex;
+        border-radius: 50px;
+        height: 4rem;
+        width: 4rem;
     }
 }
 @media (max-width: 915px) {

@@ -30,34 +30,36 @@ let image = [
 
 function render() {
     let templateimg = document.getElementById(`template_container`);
-    let pop_up = document.getElementById(`main_pop_up`);
     for (let i = 0; i < image.length; i++) {
         templateimg.innerHTML += getnotesHTML(i);
-    }
-    for (let i = 0; i < image.length; i++) {
-        if (i < 1) {
-            pop_up.innerHTML += pop_up_template(i);
-        }
     }
 }
 
 function getnotesHTML(index) {
     return `<div class="single_element">
-                <img onclick="toggle_pop_up()" src=${image[index]}>
+                <img class="images" onclick="popup(), d_none_pop()" src=${image[index]}>
             </div>`;
 }
 
-function pop_up_template(index) {
-    return `  <div class="child1">Image Name</div>
-                <div class="child2"><img src=${image[index]} alt="" /></div>
-                <div class="child3">
-                    <img onclick="" src="./img/left arrow.png" alt="" />
-                    <span>1/2</span>
-                    <img onclick="" src="./img/right arrow.png" alt="" />
-                </div>`;
+function popup() {
+    let pop = document.getElementById(`test`);
+
+    pop.innerHTML += pop_template();
 }
 
-function toggle_pop_up() {
-    let showornot = document.getElementById(`main_pop_up`);
-    showornot.classList.toggle(`d_none`);
+function pop_template() {
+    return `<div id="main">
+<div class="child1">Image Name</div>
+<div class="child2"><img src="./gatze5.PNG" alt="" /></div>
+<div class="child3">
+    <img class="leftrightimage" onclick="" src="./img/left arrow.png" alt="" />
+    <span>1/2</span>
+    <img class="leftrightimage" onclick="" src="./img/right arrow.png" alt="" />
+</div>
+</div`;
+}
+
+function d_none_pop() {
+    let pop_up = document.getElementById(`test`);
+    pop_up.classList.toggle(`d_none`);
 }
