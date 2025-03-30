@@ -72,6 +72,9 @@ header {
         border-radius: 1.5rem;
     }
 }
+#teplateimage {
+    position: absolute;
+}
 #popupimage {
     display: flex;
     position: absolute;

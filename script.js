@@ -33,7 +33,7 @@ function getnotesHTML(index) {
 }
 
 function toggle(index) {
-    let dNone = document.getElementById(`popupimage`);
+    let dNone = document.getElementById(`teplateimage`);
     console.log(`wee`);
     dNone.classList.toggle(`d_none`);
 
@@ -41,11 +41,13 @@ function toggle(index) {
 }
 
 function popuptemplate(index) {
-    return `<div class="child1">weewooo</div>
+    return `<div id="popupimage">
+    <div class="child1">weewooo</div>
                 <div class="child2"><img class="child2image" src="${image[index]}" alt="" /></div>
                 <div class="child3">
                     <img class="leftright" onclick="" src="./img/left arrow.png" alt="" />
                     <span>1/2</span>
                     <img class="leftright" onclick="" src="./img/right arrow.png" alt="" />
+                </div>
                 </div>`;
 }
