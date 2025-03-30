@@ -17,9 +17,18 @@ let image = [
     `./img/gojo.jpg`,
     `./img/f40.JPG`,
 ];
+const cleanedImage = image.map((path) => path.replace(`./img/`, ""));
+const dNone = document.getElementById(`teplateimage`);
+const dim = document.getElementById(`dimming`);
+console.log(cleanedImage);
+
+function getout() {
+    dNone.classList.toggle(`d_none`);
+    dim.classList.toggle(`d_none`);
+}
 
 function render() {
-    let templateimg = document.getElementById(`template_container`);
+    const templateimg = document.getElementById(`template_container`);
 
     for (let i = 0; i < image.length; i++) {
         templateimg.innerHTML += getnotesHTML(i);
@@ -28,25 +37,33 @@ function render() {
 
 function getnotesHTML(index) {
     return `<div class="single_element">
-                <img class="mainimage" onclick="toggle(${index})" id="image${image[index]}" src=${image[index]}>
+                <img class="mainimage" onclick="toggle(${index})" src=${image[index]}>
             </div>`;
 }
 
 function toggle(index) {
-    let dNone = document.getElementById(`teplateimage`);
-    console.log(`wee`);
-    dNone.classList.toggle(`d_none`);
+    const toggled_none = dNone.classList.toggle(`d_none`);
+    dim.classList.toggle(`d_none`);
 
-    dNone.innerHTML += popuptemplate(index);
+    if (!toggled_none) {
+        dNone.innerHTML = popuptemplate(index);
+    } else {
+        dNone.innerHTML = ``;
+    }
 }
 
-function popuptemplate(index) {
+function changeImage() {
+    if (i < image.length - 1) {
+    }
+}
+
+function popuptemplate(i) {
     return `<div id="popupimage">
-    <div class="child1">weewooo</div>
-                <div class="child2"><img class="child2image" src="${image[index]}" alt="" /></div>
+                <div class="child1">${cleanedImage[i]}</div>
+                <div class="child2"><img class="child2image" src="${image[i]}" alt="" /></div>
                 <div class="child3">
                     <img class="leftright" onclick="" src="./img/left arrow.png" alt="" />
-                    <span>1/2</span>
+                    <span>${i + 1}/${image.length}</span>
                     <img class="leftright" onclick="" src="./img/right arrow.png" alt="" />
                 </div>
                 </div>`;
