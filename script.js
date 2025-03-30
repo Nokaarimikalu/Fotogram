@@ -1,15 +1,5 @@
 /** @format */
 
-/* <div id="main">
-<div class="child1">Image Name</div>
-<div class="child2"><img src="./gatze5.PNG" alt="" /></div>
-<div class="child3">
-    <img onclick="" src="left arrow.png" alt="" />
-    <span>1/2</span>
-    <img onclick="" src="right arrow.png" alt="" />
-</div>
-</div> */
-
 let image = [
     `./img/Bella.jpg`,
     `./img/Bella1.jpg`,
@@ -30,6 +20,7 @@ let image = [
 
 function render() {
     let templateimg = document.getElementById(`template_container`);
+
     for (let i = 0; i < image.length; i++) {
         templateimg.innerHTML += getnotesHTML(i);
     }
@@ -37,29 +28,24 @@ function render() {
 
 function getnotesHTML(index) {
     return `<div class="single_element">
-                <img class="images" onclick="popup(), d_none_pop()" src=${image[index]}>
+                <img class="mainimage" onclick="toggle(${index})" id="image${image[index]}" src=${image[index]}>
             </div>`;
 }
 
-function popup() {
-    let pop = document.getElementById(`test`);
+function toggle(index) {
+    let dNone = document.getElementById(`popupimage`);
+    console.log(`wee`);
+    dNone.classList.toggle(`d_none`);
 
-    pop.innerHTML += pop_template();
+    dNone.innerHTML += popuptemplate(index);
 }
 
-function pop_template() {
-    return `<div id="main">
-<div class="child1">Image Name</div>
-<div class="child2"><img src="./gatze5.PNG" alt="" /></div>
-<div class="child3">
-    <img class="leftrightimage" onclick="" src="./img/left arrow.png" alt="" />
-    <span>1/2</span>
-    <img class="leftrightimage" onclick="" src="./img/right arrow.png" alt="" />
-</div>
-</div`;
-}
-
-function d_none_pop() {
-    let pop_up = document.getElementById(`test`);
-    pop_up.classList.toggle(`d_none`);
+function popuptemplate(index) {
+    return `<div class="child1">weewooo</div>
+                <div class="child2"><img class="child2image" src="${image[index]}" alt="" /></div>
+                <div class="child3">
+                    <img class="leftright" onclick="" src="./img/left arrow.png" alt="" />
+                    <span>1/2</span>
+                    <img class="leftright" onclick="" src="./img/right arrow.png" alt="" />
+                </div>`;
 }
