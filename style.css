@@ -84,6 +84,7 @@ header {
 #teplateimage {
     display: flex;
     z-index: 100;
+    font-family: raleway;
     justify-content: center;
     position: absolute;
     position: fixed; /* fixiert das ding damit es immer dort bleibt wo es ist  ohne wuerde es verschwinden wenn man runterscrollt */
@@ -100,7 +101,7 @@ header {
     height: 75rem;
     padding: 3rem 3rem;
     border-radius: 2rem;
-    border: solid 0.6rem rgb(64, 0, 255);
+    border: solid 0.6rem #0c3442;
 
     .child1 {
         display: flex;
@@ -133,7 +134,7 @@ header {
         height: 6rem;
     }
     .leftright:hover {
-        filter: drop-shadow(0rem 0rem 0.8rem #ff0000);
+        filter: drop-shadow(0rem 0rem 0.8rem #0800ff);
     }
 }
 footer {
@@ -168,6 +169,19 @@ footer {
         }
     }
 }
+@media (max-width: 800px) {
+    #popupimage {
+        width: 50rem;
+        height: 65rem;
+        .child2image {
+            width: 35rem;
+            height: 35rem;
+        }
+    }
+    #teplateimage {
+        top: 20%;
+    }
+}
 @media (max-width: 696px) {
     header {
         min-height: 8rem;
@@ -180,10 +194,21 @@ footer {
             font-size: 3.6rem;
         }
     }
-    footer {
-        min-height: 12rem;
-        img {
-            height: 4rem;
+    #teplateimage {
+        top: 20%;
+    }
+    #popupimage {
+        width: 40rem;
+        height: 55rem;
+        .child2image {
+            width: 25rem;
+            height: 25rem;
+        }
+        footer {
+            min-height: 12rem;
+            img {
+                height: 4rem;
+            }
         }
     }
 }
@@ -213,16 +238,34 @@ footer {
     #popupimage {
         width: 30rem;
         height: 45rem;
-        .child2image {
-            width: 25rem;
-            height: 25rem;
+        .child1 {
+            font-size: 2.4rem;
         }
+        .child2image {
+            width: 22rem;
+            height: 22rem;
+        }
+        span {
+            font-size: 2.4rem;
+        }
+        .leftright {
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+    #teplateimage {
+        top: 30%;
     }
     footer {
         padding: 1.6rem;
     }
 }
 @media (max-width: 400px) {
+    header {
+        .headerimage {
+            height: 4rem;
+        }
+    }
     #main {
         h1 {
             font-size: 2.2rem;
@@ -243,5 +286,22 @@ footer {
                 height: 20rem;
             }
         }
+    }
+    #popupimage {
+        width: 25rem;
+        height: 35rem;
+        .child1 {
+            font-size: 2rem;
+        }
+        .child2image {
+            width: 18rem;
+            height: 18rem;
+        }
+        .child3 {
+            padding-bottom: 0;
+        }
+    }
+    #teplateimage {
+        top: 30%;
     }
 }

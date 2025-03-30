@@ -15,7 +15,7 @@ let image = [
     `./img/me.png`,
     `./img/land.png`,
     `./img/gojo.jpg`,
-    `./img/f40.JPG`,
+    `./img/F40.JPG`,
 ];
 const cleanedImage = image.map((path) => path.replace(`./img/`, ""));
 const dNone = document.getElementById(`teplateimage`);
