@@ -5,7 +5,7 @@ let image = [
     `./img/Bella1.jpg`,
     `./img/gatze2.png`,
     `./img/gatze.jpg`,
-    `./img/gatze7.png`,
+    `./img/gatze7.PNG`,
     `./img/gatze5.PNG`,
     `./img/gatze6.png`,
     `./img/mecanik.JPG`,
@@ -19,18 +19,18 @@ let image = [
 const cleanedImage = image.map((path) => path.replace(`./img/`, ""));
 const dNone = document.getElementById(`teplateimage`);
 const dim = document.getElementById(`dimming`);
-let renderedimage = 0;
+let renderedImage = 0;
 
-function getout() {
+function getOut() {
     dNone.classList.toggle(`d_none`);
     dim.classList.toggle(`d_none`);
 }
 
 function render() {
-    const templateimg = document.getElementById(`template_container`);
+    const templateImg = document.getElementById(`template_container`);
 
     for (let i = 0; i < image.length; i++) {
-        templateimg.innerHTML += getnotesHTML(i);
+        templateImg.innerHTML += getnotesHTML(i);
     }
 }
 
@@ -43,8 +43,7 @@ function getnotesHTML(index) {
 function toggle(index) {
     const toggled_none = dNone.classList.toggle(`d_none`);
     dim.classList.toggle(`d_none`);
-
-    renderedimage = index;
+    renderedImage = index;
 
     if (!toggled_none) {
         dNone.innerHTML = popupTemplate(index);
@@ -54,15 +53,15 @@ function toggle(index) {
 }
 
 function changeImage(next) {
-    renderedimage += next;
+    renderedImage += next;
 
-    if (renderedimage < 0) {
-        renderedimage = image.length - 1;
-    } else if (renderedimage >= image.length) {
-        renderedimage = 0;
+    if (renderedImage < 0) {
+        renderedImage = image.length - 1;
+    } else if (renderedImage >= image.length) {
+        renderedImage = 0;
     }
 
-    dNone.innerHTML = popupTemplate(renderedimage);
+    dNone.innerHTML = popupTemplate(renderedImage);
 }
 
 function popupTemplate(i) {
@@ -74,5 +73,5 @@ function popupTemplate(i) {
                     <span>${i + 1}/${image.length}</span>
                     <img class="leftright" onclick="changeImage(1)" src="./img/right arrow.png" alt="" />
                 </div>
-                </div>`;
+            </div>`;
 }

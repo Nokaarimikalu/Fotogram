@@ -35,6 +35,7 @@ body {
 }
 header {
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 0rem 6rem;
     background-color: #082029;
@@ -66,6 +67,7 @@ header {
         flex-wrap: wrap;
     }
     .mainimage {
+        cursor: pointer;
         width: 20rem;
         height: 20rem;
         border-radius: 1.5rem;
@@ -143,7 +145,7 @@ footer {
     justify-content: space-between;
     padding: 0rem 6rem;
     background-color: #082029;
-    min-height: 16rem;
+    min-height: 14rem;
     img {
         height: 4rem;
         width: auto;
@@ -201,8 +203,8 @@ footer {
         width: 40rem;
         height: 55rem;
         .child2image {
-            width: 25rem;
-            height: 25rem;
+            width: 30rem;
+            height: 30rem;
         }
         footer {
             min-height: 12rem;
@@ -238,12 +240,13 @@ footer {
     #popupimage {
         width: 30rem;
         height: 45rem;
+        padding: 1rem;
         .child1 {
             font-size: 2.4rem;
         }
         .child2image {
-            width: 22rem;
-            height: 22rem;
+            width: 25rem;
+            height: 25rem;
         }
         span {
             font-size: 2.4rem;
@@ -278,8 +281,8 @@ footer {
         #template_container {
             gap: 2rem;
             img {
-                width: 20rem;
-                height: 20rem;
+                width: 18rem;
+                height: 18rem;
             }
             a {
                 width: 20rem;
@@ -290,12 +293,13 @@ footer {
     #popupimage {
         width: 25rem;
         height: 35rem;
+        padding: 1rem;
         .child1 {
             font-size: 2rem;
         }
         .child2image {
-            width: 18rem;
-            height: 18rem;
+            width: 21rem;
+            height: 21rem;
         }
         .child3 {
             padding-bottom: 0;
