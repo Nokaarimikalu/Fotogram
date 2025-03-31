@@ -17,7 +17,7 @@ let image = [
     `./img/F40.JPG`,
 ];
 const cleanedImage = image.map((path) => path.replace(`./img/`, ""));
-const dNone = document.getElementById(`teplateimage`);
+const dNone = document.getElementById(`teplateImage`);
 const dim = document.getElementById(`dimming`);
 let renderedImage = 0;
 
@@ -36,7 +36,7 @@ function render() {
 
 function getnotesHTML(index) {
     return `<div class="single_element">
-                <img class="mainimage" onclick="toggle(${index})" src=${image[index]}>
+                <img class="mainImage" onclick="toggle(${index})" src=${image[index]}>
             </div>`;
 }
 
@@ -65,13 +65,13 @@ function changeImage(next) {
 }
 
 function popupTemplate(i) {
-    return `<div id="popupimage">
+    return `<div id="popupImage">
                 <div class="child1">${cleanedImage[i]}</div>
-                <div class="child2"><img class="child2image" src="${image[i]}" alt="" /></div>
+                <div class="child2"><img class="child2Image" src="${image[i]}" alt="" /></div>
                 <div class="child3">
-                    <img class="leftright" onclick="changeImage(-1)" src="./img/left arrow.png" alt="" />
+                    <img class="leftRight" onclick="changeImage(-1)" src="./img/left arrow.png" alt="" />
                     <span>${i + 1}/${image.length}</span>
-                    <img class="leftright" onclick="changeImage(1)" src="./img/right arrow.png" alt="" />
+                    <img class="leftRight" onclick="changeImage(1)" src="./img/right arrow.png" alt="" />
                 </div>
             </div>`;
 }
